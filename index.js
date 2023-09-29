@@ -70,33 +70,32 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
     }
   };
 
+  const makeRandomArray = () => {
+    let arr = [];
+    for (let i = 0; i < 20; i++) {
+      let num = Math.floor(Math.random() * 100) + 1;
+      arr.push(num);
+    }
+    return arr;
+  }
+
 export { buildTree };
 
-const myTree = new Tree([2,1,3,5,4,3,6,1,2,3,5,4]);
-//prettyPrint(myTree.root);
-
-// myTree.delete(6);
-// prettyPrint(myTree.root);
-// console.log(myTree.find(7))
-/*
-const add = (node) => {
-  console.log('add node:', node)
-  return node.value + 50;
-}
-*/
-
-//console.log(myTree.levelOrder());
-const newTree = new Tree([1,2,3,4,5,6,7]);
-prettyPrint(newTree.root);
-//      newTree:
-//          4
-//      2       6
-//    1   3   5   7
-
-// console.log(newTree.inorder()) // 1,2,3,4,5,6,7
-// console.log(newTree.preorder()) // 4,2,1,3,6,5,7
-// console.log(newTree.postorder()) // 1,3,2,5,7,6,4
-
-console.log(newTree.height());
-console.log(newTree.isBalanced());
-console.log(newTree.rebalance());
+const randomArr = makeRandomArray();
+const myTree = new Tree(randomArr);
+console.log(myTree.isBalanced());
+console.log(myTree.levelOrder());
+console.log(myTree.preorder());
+console.log(myTree.postorder());
+console.log(myTree.inorder());
+console.log(myTree.insert(400));
+console.log(myTree.insert(500));
+console.log(myTree.insert(600));
+console.log(myTree.insert(700));
+console.log(myTree.insert(800));
+console.log(myTree.isBalanced());
+console.log(myTree.rebalance());
+console.log(myTree.levelOrder());
+console.log(myTree.preorder());
+console.log(myTree.postorder());
+console.log(myTree.inorder());
