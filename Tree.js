@@ -55,6 +55,13 @@ class Tree {
         }
         return newNode;
     }
+
+    find(value, current = this.root) {
+        if (current === null) return;
+        if (current.value === value) return current;
+        if (current.value > value) return this.find(value, current.left);
+        if (current.value < value) return this.find(value, current.right);
+    }
 }
 
  export {

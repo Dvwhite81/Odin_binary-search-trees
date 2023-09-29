@@ -75,5 +75,6 @@ export { buildTree };
 const myTree = new Tree([2,1,3,7,4,3,6,1,7,2,5,8]);
 prettyPrint(myTree.root);
 
-myTree.delete(6);
-prettyPrint(myTree.root);
+// myTree.delete(6);
+// prettyPrint(myTree.root);
+// console.log(myTree.find(7))
