@@ -62,6 +62,22 @@ class Tree {
         if (current.value > value) return this.find(value, current.left);
         if (current.value < value) return this.find(value, current.right);
     }
+
+    levelOrder(callback) {
+        if (this.root === null) return;
+        const queue = [this.root];
+        const array = [];
+
+        while (queue.length) {
+            let current = queue.shift();
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
+
+            if (callback) array.push(callback(current));
+            else array.push(current.value);
+        }
+        return array;
+    }
 }
 
  export {
