@@ -72,16 +72,31 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 
 export { buildTree };
 
-const myTree = new Tree([2,1,3,7,4,3,6,1,7,2,5,8]);
+const myTree = new Tree([2,1,3,5,4,3,6,1,2,3,5,4]);
 //prettyPrint(myTree.root);
 
 // myTree.delete(6);
 // prettyPrint(myTree.root);
 // console.log(myTree.find(7))
-
+/*
 const add = (node) => {
+  console.log('add node:', node)
   return node.value + 50;
 }
+*/
 
-console.log(myTree.levelOrder());
-prettyPrint(myTree.root);
+//console.log(myTree.levelOrder());
+const newTree = new Tree([1,2,3,4,5,6,7]);
+prettyPrint(newTree.root);
+//      newTree:
+//          4
+//      2       6
+//    1   3   5   7
+
+// console.log(newTree.inorder()) // 1,2,3,4,5,6,7
+// console.log(newTree.preorder()) // 4,2,1,3,6,5,7
+// console.log(newTree.postorder()) // 1,3,2,5,7,6,4
+
+console.log(newTree.height());
+console.log(newTree.isBalanced());
+console.log(newTree.rebalance());
